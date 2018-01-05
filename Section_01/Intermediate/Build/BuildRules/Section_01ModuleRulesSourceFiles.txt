@@ -1,3 +1,0 @@
-/Users/abresee/Desktop/VR/Section_01/Source/Section_01/Section_01.Build.cs
-/Users/abresee/Desktop/VR/Section_01/Source/Section_01.Target.cs
-/Users/abresee/Desktop/VR/Section_01/Source/Section_01Editor.Target.cs

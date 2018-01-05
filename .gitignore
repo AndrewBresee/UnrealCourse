@@ -1,0 +1,7 @@
+*.uproject
+Binaries/
+Config/
+Content/
+Intermediate/
+Saved/
+
