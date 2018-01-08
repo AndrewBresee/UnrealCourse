@@ -13,16 +13,18 @@
 #include <string>
 
 #endif /* FBullCowGame_hpp */
-class FBullCowGam {
+class FBullCowGame {
 public:
-    void Reset();
-    int GetMaxTries();
-    int GetCurrentTry;
+    FBullCowGame();
+    
+    int GetMaxTries() const;
+    int GetCurrentTry() const;
     bool IsGameWon();
     bool CheckGuessValifity(std::string);
     
-    
+    void Reset();
     
 private:
-    
+    int MaxTries = 5;
+    int CurrentTry = 1;
 };

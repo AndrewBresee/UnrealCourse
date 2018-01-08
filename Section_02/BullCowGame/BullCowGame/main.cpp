@@ -7,11 +7,13 @@
 //
 
 #include <iostream>
+#include "FBullCowGame.hpp"
 
 void PrintIntro(int WORD_LENGTH);
-static void PlayGame(int WORD_LENGTH);
+static void PlayGame();
 std::string GetGuess();
 bool AskPlayAgain();
+FBullCowGame BCGame;
 
 int main(int argc, const char * argv[])
 {
@@ -19,7 +21,7 @@ int main(int argc, const char * argv[])
     bool bPlayAgain = false;
     do {
         PrintIntro(WORD_LENGTH);
-        PlayGame(WORD_LENGTH);
+        PlayGame();
         bPlayAgain = AskPlayAgain();
     } while (bPlayAgain);
     return 0;
@@ -35,16 +37,21 @@ void PrintIntro(int WORD_LENGTH)
 
 std::string GetGuess()
 {
+    int CurrentTry = BCGame.GetCurrentTry();
+    
     std::string Guess = "";
-    std::cout << "Enter guess: ";
+    std::cout << "Try " << CurrentTry << ". " << "Enter guess: ";
     getline (std::cin,Guess);
     return Guess;
 }
 
-static void PlayGame(int WORD_LENGTH)
+static void PlayGame()
 {
-    for (int count = WORD_LENGTH; count > 0; count--) {
+    int const MaxTries = BCGame.GetMaxTries();
+    
+    for (int count = MaxTries; count > 0; count--) {
         std::string Guess = GetGuess();
+        std::cout << "MaxTries: " << MaxTries << "\n";
         std::cout << "You guessed: " << Guess << "\n";
         Guess = "";
         std::cout << std::endl;
