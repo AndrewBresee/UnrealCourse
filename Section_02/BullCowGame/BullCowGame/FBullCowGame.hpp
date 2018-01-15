@@ -1,16 +1,15 @@
-//
-//  FBullCowGame.hpp
-//  BullCowGame
-//
-//  Created by Andrew Bresee on 1/4/18.
-//  Copyright © 2018 DrewBresee. All rights reserved.
-//
-
+/* This is the header for FBCGame class.
+ It definies all the methods and variables
+ that can be used. Sort of like an index.
+ */
+#pragma once
 #ifndef FBullCowGame_hpp
 #define FBullCowGame_hpp
+#define TMap std::map
 
 #include <stdio.h>
 #include <string>
+#include <map>
 
 using FString = std::string;
 using int32 = int;
@@ -43,12 +42,16 @@ public:
     bool IsGameWon() const;
     FBullCowCount SubmitGuess(FString);
     void Reset();
+    FString GetRandomWord(int32) const;
+    void SetRandomWord(int32);
     
 private:
     int32 MaxTries;
     int32 CurrentTry;
     FString MyHiddenWord;
     bool bIsGameWon;
+    TMap<int, TMap<int, FString> > GenerateRandomDictor;
     
     bool IsIsogram(FString) const;
+    bool IsLowercase(FString) const;
 };
