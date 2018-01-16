@@ -1,8 +1,8 @@
-*.uproject
 Binaries/
-Config/
-Content/
 Intermediate/
 Saved/
+Build/
+DerivedDataCache/
 
+*.VC.db
 *.pdf
