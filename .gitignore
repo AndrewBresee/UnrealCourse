@@ -4,6 +4,7 @@ Saved/
 Build/
 DerivedDataCache/
 StarterContent/
+xcuserdata/
 
 *.VC.db
 *.pdf
